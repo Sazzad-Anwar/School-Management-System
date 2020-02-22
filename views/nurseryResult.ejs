@@ -1,0 +1,354 @@
+<%- include("./partials/header") -%>
+<title>Result</title>
+
+<div class="student_details pb-0">
+    <div class="container-fluid">
+        <%- include("./partials/flash_message") -%>
+            <div class="row">
+                <table class="table table-hover table-borderless gradient-color table-dark mb-0">
+                    <thead>
+                        <tr>
+                            <td>
+                                <h3 class="font-family-pridi text-center">ID: <span style="color: cyan;"><%= student.students_id %></span></h3>
+                            </td>
+                            <td>
+                            <form action="info" method="POST">
+                                <input type="hidden" name="id" value="<%= student.students_id%>">
+                                <button type="submit" class="btn btn-sm btn-info gradient-color-65"> View Details</button>
+                            </form>
+                            </td>
+                            <td>
+                                <h3 class="font-family-pridi text-center">Class: </h3>
+                            </td>
+                            <td>
+                                <h3 class="font-family-pridi text-center"><span style="color: cyan;"><%= student.Class %></span></h3>
+                            </td>
+                            <td>
+                                <h3 class="font-family-pridi text-center">Section: <span style="color: cyan;"><%= student.section %></span></h3>
+                            </td>
+                            <td></td>
+                            <td><h3 class="font-family-pridi text-center">Session: <span style="color: cyan;"><%= student.session %></span></h3></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3 class="font-family-pridi">Subject Name</h3>
+                            </td>
+                            
+                            <td>
+                                <h3 class="font-family-pridi text-center" > 1<sup>st</sup> Semester</h3>
+                            </td>
+                            <td>
+                                <h3 class="font-family-pridi text-center" >Grade</h3>
+                            </td>
+                            <td>
+                                <h3 class="font-family-pridi text-center" >GPA</h3>
+                            </td>
+                            <td>
+                                <h3 class="font-family-pridi text-center" >2<sup>nd</sup> Semester</h3>
+                            </td>
+                            <td>
+                                <h3 class="font-family-pridi text-center" >Grade</h3>
+                            </td>
+                            <td>
+                                <h3 class="font-family-pridi text-center" >GPA</h3>
+                            </td>
+                            <td>
+                                <h3 class="font-family-pridi text-center" >3<sup>rd</sup> Semester</h3>
+                            </td>
+                            <td>
+                                <h3 class="font-family-pridi text-center" >Grade</h3>
+                            </td>
+                            <td>
+                                <h3 class="font-family-pridi text-center" >GPA</h3>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- SCORES OF BANGLA -->
+                            <tr>
+                                <td>
+                                    <h4 class="font-family-pridi">Bangla</h4>
+                                </td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" ><%= score.bangla.firstSem %></h4>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= b1stgpa %></h3>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= b1stgradePoint %></h3>
+                                </td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" ><%= score.bangla.secondSem %></h4>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= b2ndgpa %></h3>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= b2ndgradePoint %></h3>
+                                </td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" ><%= score.bangla.thirdSem %></h4>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= b3rdgpa %></h3>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= b3rdgradePoint %></h3>
+                                </td>
+                            </tr>
+                            
+                            <!-- SCORES OF ENGLISH -->
+                            <tr>
+                                <td>
+                                    <h4 class="font-family-pridi">English</h4>
+                                </td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" ><%= score.english.firstSem %></h4>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= e1stgpa %></h3>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= e1stgradePoint %></h3>
+                                </td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" ><%= score.english.secondSem %></h4>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= e2ndgpa %></h3>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= e2ndgradePoint %></h3>
+                                </td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" ><%= score.english.thirdSem %></h4>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= e3rdgpa %></h3>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= e3rdgradePoint %></h3>
+                                </td>
+                            </tr>
+
+                            <!-- SCORES OF MATH -->
+                            <tr>
+                                <td>
+                                    <h4 class="font-family-pridi">Math</h4>
+                                </td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" ><%= score.math.firstSem %></h4>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= m1stgpa %></h3>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= m1stgradePoint %></h3>
+                                </td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" ><%= score.math.secondSem %></h4>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= m2ndgpa %></h3>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= m2ndgradePoint %></h3>
+                                </td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" ><%= score.math.thirdSem %></h4>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= m3rdgpa %></h3>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= m3rdgradePoint %></h3>
+                                </td>
+                            </tr>
+
+                            <!-- SCORES OF RELIGION -->
+                            <tr>
+                                <td>
+                                    <h4 class="font-family-pridi">Religion</h4>
+                                </td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" ><%= score.religion.firstSem %></h4>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= r1stgpa %></h3>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= r1stgradePoint %></h3>
+                                </td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" ><%= score.religion.secondSem %></h4>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= r2ndgpa %></h3>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= r2ndgradePoint %></h3>
+                                </td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" ><%= score.religion.thirdSem %></h4>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= r3rdgpa %></h3>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= r3rdgradePoint %></h3>
+                                </td>
+                            </tr>
+
+                            <!-- SCORES FOR GENERAL KNOWLEDGE -->
+                            <tr>
+                                <td>
+                                    <h4 class="font-family-pridi">General Knowledge</h4>
+                                </td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" ><%= score.general_knowledge.firstSem %></h4>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= g1stgpa %></h3>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= g1stgradePoint %></h3>
+                                </td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" ><%= score.general_knowledge.secondSem %></h4>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= g2ndgpa %></h3>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= g2ndgradePoint %></h3>
+                                </td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" ><%= score.general_knowledge.thirdSem %></h4>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= g3rdgpa %></h3>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= g3rdgradePoint %></h3>
+                                </td>
+                            </tr>
+
+                            <!-- SCORES FOR DRAWING -->
+                            <tr>
+                                <td>
+                                    <h4 class="font-family-pridi">Drawing</h4>
+                                </td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" ><%= score.drawing.firstSem %></h4>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= d1stgpa %></h3>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= d1stgradePoint %></h3>
+                                </td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" ><%= score.drawing.secondSem%></h4>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= d2ndgpa %></h3>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= d2ndgradePoint %></h3>
+                                </td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" ><%= score.drawing.thirdSem %></h4>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= d3rdgpa %></h3>
+                                </td>
+                                <td>
+                                    <h3 class="font-family-pridi text-center" ><%= d3rdgradePoint %></h3>
+                                </td>
+                            </tr>
+
+                            <!-- AVERAGE MARKS -->
+                            <tr>
+                                <td><h4 class="font-family-pridi">Average Marks </h4></td>
+                                <td><h4 class="font-family-pridi text-center" style=" color: cyan;" ><%= average %> </h4></td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" style="color: cyan;" ><%= firstSemGrade %></h4>
+                                </td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" style="color: cyan;" ><%= firstSemTotalGrade %></h4>
+                                </td>
+                                <td><h4 class="font-family-pridi text-center" style=" color: cyan;" ><%= secondSemAverage %> </h4></td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" style="color: cyan;" ><%= secondSemGrade %></h4>
+                                </td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" style="color: cyan;" ><%= secondSemTotalGrade %></h4>
+                                </td>
+                                <td><h4 class="font-family-pridi text-center" style=" color: cyan;" ><%= thirdSemAverage %> </h4></td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" style="color: cyan;" ><%= thirdSemGrade %></h4>
+                                </td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" style="color: cyan;" ><%= thirdSemTotalGrade %></h4>
+                                </td>
+                            </tr>
+
+                            <!-- TOTAL SCORES -->
+                            <tr>
+                                <td>
+                                    <h4 class="font-family-pridi">Total Marks</h4>
+                                </td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" style="color: cyan;" ><%= totalFirstSem %></h4>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td><h4 class="font-family-pridi text-center" style=" color: cyan;" ><%= totalSecondSem %> </h4></td>
+                                <td></td>
+                                <td></td>
+                                <td><h4 class="font-family-pridi text-center" style=" color: cyan;" ><%= totalThirdSem %> </h4></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <% if(totalFirstSem && totalSecondSem && totalThirdSem){ %>
+                                <tr>
+                                    <td class="alert alert-danger" role="alert"><h5 class="font-family-pridi">Total Annual Marks </h5></td>
+                                    <td><h4 class="font-family-pridi text-center" style=" color: cyan;" ><%= totalAverageMarks %></h4></td>
+                                    <td class="alert alert-danger" role="alert"><h4 class="font-family-pridi text-center"> Grade </h4></td>
+                                    <td><h4 class="font-family-pridi text-center" style=" color: cyan;" ><%= overAllGrade %></h4></td>
+                                    <td class="alert alert-danger" role="alert"><h4 class="font-family-pridi text-center" >GPA </h4></td>
+                                    <td ><h4 class="font-family-pridi text-center" style=" color: cyan;" ><%= overAllTotalGrade %></h4></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            <% }else{ %>
+                                
+                            <% } %>
+                            
+                            <tr>
+                                <td><input type="text" name="id" value="<%= student.students_id %>" hidden></td>
+                                <td><input type="hidden" name="Class" value="<%= student.Class %>"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <form action="nurseryResultEdit" method="POST">
+                                    <input type="hidden" name="id" value="<%=student.students_id%>">
+                                <td colspan="2"><button type="submit" class="btn btn-success btn-block btn-lg gradient-color-65"> Update Results </button></td>
+                                </form>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+</div>
+
+<%- include("./partials/footer") -%>

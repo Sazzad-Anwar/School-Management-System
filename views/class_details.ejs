@@ -1,0 +1,65 @@
+<%- include("./partials/header") -%>
+
+<title>Student's Information</title>
+
+<div class="student_details pb-0">
+  <div class="container-fluid">
+    <%- include("./partials/flash_message") -%>
+    <div class="row">
+      <table class="table table-hover table-borderless gradient-color table-dark mb-0">
+        <thead>
+          <tr>
+            <th></th>
+            <th scope="col"><h4 style="font-family: 'Pridi','serif';">Total Students : <span style="color: cyan;"><%= count %></span> </h4></th>
+            <th scope="col"><h4 style="font-family: 'Pridi','serif';">Class : <span style="color: cyan;"><%= selectedClass %></span></h4></th>
+            <th scope="col"><h4 style="font-family: 'Pridi','serif';">Section : <span style="color: cyan;"><%= selectedSection %></span></h4></th>
+            <th scope="col"><h4 style="font-family: 'Pridi','serif';">Session : <span style="color: cyan;"><%= selectedSession %></span></h4></th>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr>
+            <th scope="col"><h4 style="font-family: 'Pridi','serif';">ID</h4></th>
+            <th scope="col"><h4 style="font-family: 'Pridi','serif';">Student Name</h4></th>
+            <th scope="col"><h4 style="font-family: 'Pridi','serif';">Date of Birth</h4></th>
+            <th scope="col"><h4 style="font-family: 'Pridi','serif';">Admission Date</h4></th>
+            <th scope="col"><h4 style="font-family: 'Pridi','serif';">Contact Number</h4></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% Class.forEach(function(Class){ %>
+            <tr>
+              <td><h5><%= Class.students_id %></h5></td>
+              <td><h5><%= Class.students_name %></h5></td>
+              <td><h5><%= Class.dateOfBirth %></h5></td>
+              <td><h5><%= Class.admission_date %></h5></td>
+              <td><h5><%= Class.contact_number %></h5></td>
+              <td>
+                <form action="info" method="POST">
+                  <input type="hidden" name="id" value="<%= Class.students_id %>">
+                  <button type="submit" class="btn btn-primary">View Details</button>
+                </form>
+              </td>
+              <td>
+                <form action="result" method="POST">
+                  <input type="hidden" name="id" value="<%= Class.students_id %>">
+                  <button type="submit" class="btn btn-info">Check Result</button>
+                </form>
+              </td>
+              <td>
+                <form action="delete?_method=DELETE" method="post">
+                  <input type="hidden" name="id" value="<%= Class._id%>">
+                  <input type="hidden" name="students_id" value='<%= Class.students_id%>''>
+                  <button type="submit" class="btn btn-danger ">Detete</button>
+                </form>
+              </td>
+              <% }) %>
+            </tr>
+            
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<%- include("./partials/footer") -%>

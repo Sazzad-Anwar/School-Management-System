@@ -1,0 +1,106 @@
+<%- include("./partials/header") -%>
+
+<title>Student's Information</title>
+
+<div class="student_details pb-0">
+  <div class="container-fluid">
+    <div class="row">
+      <%- include("./partials/flash_message") -%> 
+      <table class="table table-hover gradient-color table-borderless table-dark mb-0">
+        <tbody>
+          <tr>
+            <td><h4 class="pl-5">Name :</h4></td>
+            <td><h4><%= student.students_name %></h4></td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><h4 class="pl-5">ID :</h4></td>
+            <td><h4><%= student.students_id %></h4></td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><h4 class="pl-5">Class :</h4></td>
+            <td><h4><%= student.Class %></h4></td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><h4 class="pl-5">Section :</h4></td>
+            <td><h4><%= student.section %></h4></td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><h4 class="pl-5">Admission Date :</h4></td>
+            <td><h4><%= student.admission_date %></h4></td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><h4 class="pl-5">Session :</h4></td>
+            <td><h4><%= student.session %></h4></td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><h4 class="pl-5">Father's Name :</h4></td>
+            <td><h4><%= student.father_name %></h4></td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><h4 class="pl-5">Mother's Name :</h4></td>
+            <td><h4><%= student.mother_name %></h4></td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><h4 class="pl-5">Date of Birth :</h4></td>
+            <td><h4><%= student.dateOfBirth %></h4></td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><h4 class="pl-5">Contact Number :</h4></td>
+            <td><h4><%= student.contact_number %></h4></td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><h4 class="pl-5">Contact Relation :</h4></td>
+            <td><h4><%= student.contact_rel %></h4></td>
+            <td> </td>
+          </tr>
+          <% if(!student._id){ %>
+            <div class="row">
+  
+            </div>
+          <% }else{ %> 
+          <tr>
+            <td class="pl-5"><form action="edit" method="POST">
+                <input type="hidden" name="id" value="<%= student._id %>">
+                <button type="submit" class="btn btn-info btn-default btn-block">Edit Details</button>
+              </form>
+            </td>
+            <td>
+              <% if(!score){ %>
+                <form action="resultEntry" method="POST">
+                  <input type="text" name="id" value="<%= student.students_id %>" hidden>
+                  <button type="submit" class="btn btn-primary btn-default btn-block"> Insert Scores </button>
+                </form>
+              <% }else{ %>
+                <form action="result" method="POST">
+                  <input type="text" name="id" value="<%= student.students_id %>" hidden>
+                  <input type="text" name="Class" value="<%= student.Class %>" hidden>
+                  <button type="submit" class="btn btn-primary btn-default btn-block"> Check Results </button>
+                </form>
+              <% } %>
+            </td>
+            <td>
+              <form action="delete?_method=DELETE" method="post">
+                <input type="hidden" name="id" value="<%= student._id%>">
+                <input type="hidden" name="students_id" value='<%= student.students_id%>''>
+                <button type="submit" class="btn btn-danger btn-default btn-block">Detete</button>
+              </form>
+            </td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </div>    
+</div>
+
+<%- include("./partials/footer") -%>

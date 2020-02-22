@@ -1,0 +1,192 @@
+.blur{
+    filter: blur(9px) !important;
+}
+
+/*----------------------- form ------------------------*/
+
+.form{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    color: black !important;
+    text-shadow: 2px 2px;
+    font-weight: 900;
+}
+::placeholder{
+    color: white !important;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: transparent !important;
+
+}
+
+.input{
+    background-color: transparent;
+    outline: none;
+    margin: 0px;
+    padding: 0px 10px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid black;
+    color: white !important;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+input:focus{
+    background-color: transparent !important;
+    outline: none !important;
+    border-top: transparent;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid black !important;
+}
+
+input:focus::placeholder{
+    padding-left: 100% !important;
+    transition: 1s ease-in-out;
+    color: white !important;
+    font-size: 20px;
+    font-weight: 700;
+    text-shadow: 2px 1px;
+    border-width: 0px !important;
+}
+
+.label{
+    font-size: 30px;
+    margin-left: 20%;
+    font-family: 'Pridi', serif;
+}
+
+.select{
+    background-color: transparent !important;
+}
+.option{
+    background-color: #134E5E !important;
+}
+
+.a, .p{
+    text-shadow: none;
+}
+.p{
+    font-weight: 900;
+    font-size: 18px;
+    padding-top: 6px;
+}
+
+.submit-button{
+    margin-left: 6%;
+    margin-right: 33%;
+}
+
+/*---------------------- navbar ---------------------------*/
+.navbar-brand{
+    font-family: 'Sigmar One', cursive;
+    color:#71B280 !important;
+    font-size: xx-large;
+    margin-left: 300px !important;
+}
+.navbar{
+    color: white;
+}
+
+.gradient-color-65{
+    background: linear-gradient( 45deg, #134E5E 55% ,#71B280 35% ) !important;
+}
+
+.gradient-color{
+    background: linear-gradient( #134E5E ,#71B280 ) !important;
+}
+.navbar-nav{
+    margin-left: auto;
+    font-family: 'Alfa Slab One', cursive;
+}
+.nav-link{
+    color: #134E5E !important;
+    font-size: xx-large;
+}
+.nav-link:hover{
+    color: black !important;
+    transition: .8s ease-out;
+}
+.brand-animation{
+    font-size: 30px;
+    transition: 1s ease-in;
+    margin-left: 35vw;
+}
+
+/*--------------------- student registration page ------------*/
+.card{
+    background-color: #343A40;
+    border-radius: 10px;
+    box-shadow: 8px 8px #c9c1c1;
+    font-family: 'Alfa Slab One', cursive;
+}
+.card:hover{
+    box-shadow: 19px 20px grey;
+    transition: .3s ease-in;
+    background-color: #343A40;
+    color: white;
+}
+.card1, .card4{
+    left: -100%;
+}
+.left-show{
+    left: 0%;
+    transition: .8s ease-in;
+}
+.card2{
+    top: -150%;
+}
+.top-show{
+    top: 0%;
+    transition: .8s ease-in;
+}
+.card3, .card6{
+    right: -100%;
+}
+.right-show{
+    right: 0%;
+    transition: .8s ease-in;
+}
+.card5{
+    bottom: -200%;
+}
+.bottom-show{
+    bottom: 0%;
+    transition: .8s ease-in;
+}
+.active{
+    color: white !important;
+}
+
+/*-------------------------- student registration page ----------------*/
+.student_registration{
+    background-color: #b4abab;
+    padding-left: 18%;
+}
+.registration_heading{
+    margin-left: 10%;
+}
+
+/*-------------------------- student details page --------------------*/
+
+.student_details{
+    background-color: #b4abab;
+    padding-bottom: 65px;
+}
+.font-family-pridi{
+    font-family: 'Pridi', serif;
+}
+
+/*------------------------- teachers details ------------------------*/
+
+.teacher_details{
+    padding-bottom: 65px;
+    background-color: #b4abab;
+}

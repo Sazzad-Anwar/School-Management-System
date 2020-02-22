@@ -1,0 +1,150 @@
+<%- include("./partials/header") -%>
+<title>Result Entry</title>
+
+<div class="student_details pb-0">
+    <div class="container-fluid">
+        <%- include("./partials/flash_message") -%>
+        <form action="nursery" method="POST">
+            <div class="row">
+                <table class="table table-hover table-borderless gradient-color table-dark mb-0">
+                    <thead>
+                        <tr>
+                            <td>
+                                <h3 style="font-family: 'Pridi', serif">Score Sheet</h3>
+                            </td>
+                            <td>
+                                <h3 style="font-family: 'Pridi', serif;">Student ID: <span style="color: cyan;"><%= student.students_id %></span></h3>
+                            </td>
+                            <td>
+                                <h3 style="font-family: 'Pridi', serif;">Class: <span style="color: cyan;"><%= student.Class %></span></h3>
+                            </td>
+                            <td>
+                                <h3 style="font-family: 'Pridi', serif;">Section: <span style="color: cyan;"><%= student.section %></span></h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3 style="font-family: 'Pridi', serif;">Subject Name</h3>
+                            </td>
+                            <td>
+                                <h3 style="font-family: 'Pridi', serif;">First Semester</h3>
+                            </td>
+                            <td>
+                                <h3 style="font-family: 'Pridi', serif;">Second Semester</h3>
+                            </td>
+                            <td>
+                                <h3 style="font-family: 'Pridi', serif;">Third Semester</h3>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <h4 style="font-family: 'Pridi',serif;">Bangla</h4>
+                            </td>
+                            <td>
+                                <input type="number" name="bangla_firstSem" class="from-control input">
+                            </td>
+                            <td>
+                                <input type="number" name="bangla_secondSem" class="from-control input">
+                            </td>
+                            <td>
+                                <input type="number" name="bangla_thirdSem" class="from-control input">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4 style="font-family: 'Pridi',serif;">English</h4>
+                            </td>
+                            <td>
+                                <input type="number" name="english_firstSem" class="from-control input">
+                            </td>
+                            <td>
+                                <input type="number" name="english_secondSem" class="from-control input">
+                            </td>
+                            <td>
+                                <input type="number" name="english_thirdSem" class="from-control input">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4 style="font-family: 'Pridi',serif;">Math</h4>
+                            </td>
+                            <td>
+                                <input type="number" name="math_firstSem" class="from-control input">
+                            </td>
+                            <td>
+                                <input type="number" name="math_secondSem" class="from-control input">
+                            </td>
+                            <td>
+                                <input type="number" name="math_thirdSem" class="from-control input">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4 style="font-family: 'Pridi',serif;">Religion</h4>
+                            </td>
+                            <td>
+                                <input type="number" name="religion_firstSem" class="from-control input">
+                            </td>
+                            <td>
+                                <input type="number" name="religion_secondSem" class="from-control input">
+                            </td>
+                            <td>
+                                <input type="number" name="religion_thirdSem" class="from-control input">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4 style="font-family: 'Pridi',serif;">General Knowledge</h4>
+                            </td>
+                            <td>
+                                <input type="number" name="general_knowledge_firstSem" class="from-control input">
+                            </td>
+                            <td>
+                                <input type="number" name="general_knowledge_secondSem" class="from-control input">
+                            </td>
+                            <td>
+                                <input type="number" name="general_knowledge_thirdSem" class="from-control input">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4 style="font-family: 'Pridi',serif;">Drawing</h4>
+                            </td>
+                            <td>
+                                <input type="number" name="drawing_firstSem" class="from-control input">
+                            </td>
+                            <td>
+                                <input type="number" name="drawing_secondSem" class="from-control input">
+                            </td>
+                            <td>
+                                <input type="number" name="drawing_thirdSem" class="from-control input">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><h2 class="text-right">Year :</h2></td>
+                            <td><h2 class="text-left" style="font-family: 'Pridi',serif;color: cyan;"><%= student.session %></h2></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="students_id" value="<%= student.students_id %>" hidden></td>
+                            <td></td>
+                            <td></td>
+                            <td><button type="submit" class="btn btn-success btn-block btn-lg"> Save </button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+</div>
+
+<%- include("./partials/footer") -%>

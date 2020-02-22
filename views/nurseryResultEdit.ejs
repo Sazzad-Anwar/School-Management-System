@@ -1,0 +1,269 @@
+<%- include("./partials/header") -%>
+
+<title> Result Edit </title>
+
+<div class="student_details pb-0">
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- First Semester Result Editing table -->
+            <table class="table table-borderless table-dark table-hover gradient-color mb-0">
+                <thead>
+                    <tr>
+                        <td class="text-center" colspan="7"><h1 class="font-family-pridi">First Semester Result Edit</h1></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3 class="font-family-pridi">ID: <span style="color: cyan;"><%= student.students_id %></span></h3>
+                        </td>
+                        <td>
+                        <form action="info" method="POST">
+                            <input type="hidden" name="id" value="<%= student.students_id%>">
+                            <button type="submit" class="btn btn-sm btn-info gradient-color-65"><span style="font-family: 'Pridi',serif;"> View Details </span></button>
+                        </form>
+                        <td>
+                            <form action="result" method="POST">
+                                <input type="hidden" name="id" value="<%= student.students_id%>">
+                                <button type="submit" class="btn btn-sm btn-info gradient-color-65"><span style="font-family: 'Pridi',serif;"> View Result </span></button>
+                            </form>
+                        </td>
+                        </td>
+                        <td>
+                            <h3 style="font-family: 'Pridi', serif;">Class: <span style="color: cyan;"><%= student.Class %></h3>
+                        </td>
+                        <td>
+                            <h3 class="font-family-pridi"></span></h3>
+                        </td>
+                        <td>
+                            <h3 style="font-family: 'Pridi', serif;">Section: <span style="color: cyan;"><%= student.section %></span></h3>
+                        </td>
+                        <td></td>
+                        <td><h3 style="font-family: 'Pridi', serif;">Session: <span style="color: cyan;"><%= student.session %></span></h3></td>
+                    </tr>
+                    <tr>
+                        <td><h3 style="font-family: 'Pridi',serif;text-align: left;"> Subject </h3></td>
+                        <td><h3 style="font-family: 'Pridi', serif;text-align: center;" class="text-center"> 1<sup>st</sup> Semester</h3></td>
+                        <td><h3 style="font-family: 'Pridi', serif;text-align: center;" class="text-center"> Edit Marks </h3>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <form action="nurseryFirstSemEdit" method="POST">
+                    <tr>
+                        <td><h3 style="font-family: 'Pridi',serif;text-align: left;"> Bangla </h3></td>
+                        <td><h3 style="font-family: 'Pridi',serif;text-align: center;"> <%= score.bangla.firstSem %> </h3></td>
+                        <td><input type="number" name="bangla_firstSem" class="form-control input" required></td>
+                    </tr>
+                    <tr>
+                        <td><h3 style="font-family: 'Pridi',serif;text-align: left;"> English </h3></td>
+                        <td><h3 style="font-family: 'Pridi',serif;text-align: center;"> <%= score.english.firstSem %> </h3></td>
+                        <input type="hidden" name="id" value="<%= score.students_id %>">
+                        <td><input type="number" name="english_firstSem" class="form-control input" required></td>
+                    </tr>
+                    <tr>
+                        <td><h3 style="font-family: 'Pridi',serif;text-align: left;"> Math </h3></td>
+                        <td><h3 style="font-family: 'Pridi',serif;text-align: center;"> <%= score.math.firstSem %> </h3></td>
+                        <td><input type="number" name="math_firstSem" class="form-control input" required></td>
+                    </tr>
+                    <tr>
+                        <td><h3 style="font-family: 'Pridi',serif;text-align: left;"> Religion </h3></td>
+                        <td><h3 style="font-family: 'Pridi',serif;text-align: center;"> <%= score.religion.firstSem %> </h3></td>
+                        <td><input type="number" name="religion_firstSem" class="form-control input" required></td>
+                    </tr>
+                    <tr>
+                        <td><h3 style="font-family: 'Pridi',serif;text-align: left;"> General Knowledge </h3></td>
+                        <td><h3 style="font-family: 'Pridi',serif;text-align: center;"> <%= score.general_knowledge.firstSem %> </h3></td>
+                        <td><input type="number" name="general_knowledge_firstSem" class="form-control input" required></td>
+                    </tr>
+                    <tr>
+                        <td><h3 style="font-family: 'Pridi',serif;text-align: left;"> Drawing </h3></td>
+                        <td><h3 style="font-family: 'Pridi',serif;text-align: center;"> <%= score.drawing.firstSem %> </h3></td>
+                        <td><input type="number" name="drawing_firstSem" class="form-control input" required></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td ><button type="submit" class="btn btn-lg btn-primary btn-block gradient-color-65">Save Updates</button> </td>
+                    </tr>
+                </form>
+                </tbody>
+            </table>
+
+
+            <!-- Second Semester Result Editing table -->
+            <table class="table table-borderless table-dark table-hover gradient-color mb-0">
+                <thead>
+                    <tr>
+                        <td class="text-center pt-5 mt-5" colspan="7"><h1 class="font-family-pridi">Second Semester Result Edit</h1></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3 class="font-family-pridi">ID: <span style="color: cyan;"><%= student.students_id %></span></h3>
+                        </td>
+                        <td>
+                        <form action="info" method="POST">
+                            <input type="hidden" name="id" value="<%= student.students_id%>">
+                            <button type="submit" class="btn btn-sm btn-info gradient-color-65"> View Details</button>
+                        </form>
+                        </td>
+                        <td>
+                            <form action="result" method="POST">
+                                <input type="hidden" name="id" value="<%= student.students_id%>">
+                                <button type="submit" class="btn btn-sm btn-info gradient-color-65"><span style="font-family: 'Pridi',serif;"> View Result </span></button>
+                            </form>
+                        </td>
+                        <td>
+                            <h3 style="font-family: 'Pridi', serif;">Class: <span style="color: cyan;"><%= student.Class %></h3>
+                        </td>
+                        <td>
+                            <h3 class="font-family-pridi"></span></h3>
+                        </td>
+                        <td>
+                            <h3 style="font-family: 'Pridi', serif;">Section: <span style="color: cyan;"><%= student.section %></span></h3>
+                        </td>
+                        <td></td>
+                        <td><h3 style="font-family: 'Pridi', serif;">Session: <span style="color: cyan;"><%= student.session %></span></h3></td>
+                    </tr>
+                    <tr>
+                        <td><h3 style="font-family: 'Pridi',serif;text-align: left;"> Subject </h3></td>
+                        <td><h3 style="font-family: 'Pridi', serif;text-align: center;" class="text-center"> 2<sup>nd</sup> Semester</h3></td>
+                        <td><h3 style="font-family: 'Pridi', serif;text-align: center;" class="text-center"> Edit Marks </h3>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <form action="nurserySecondSemEdit" method="POST">
+                        <tr>
+                            <td><h3 style="font-family: 'Pridi',serif;text-align: left;"> Bangla </h3></td>
+                            <td><h3 style="font-family: 'Pridi',serif;text-align: center;"> <%= score.bangla.secondSem %> </h3></td>
+                            <input type="hidden" name="id" value="<%= score.students_id %>">
+                            <td><input type="number" name="bangla_secondSem" class="form-control input" required></td>
+                        </tr>
+                        <tr>
+                            <td><h3 style="font-family: 'Pridi',serif;text-align: left;"> English </h3></td>
+                            <td><h3 style="font-family: 'Pridi',serif;text-align: center;"> <%= score.english.secondSem %> </h3></td>
+                            <td><input type="number" name="english_secondSem" class="form-control input" required></td>
+                        </tr>
+                        <tr>
+                            <td><h3 style="font-family: 'Pridi',serif;text-align: left;"> Math </h3></td>
+                            <td><h3 style="font-family: 'Pridi',serif;text-align: center;"> <%= score.math.secondSem %> </h3></td>
+                            <td><input type="number" name="math_secondSem" class="form-control input" required></td>
+                        </tr>
+                        <tr>
+                            <td><h3 style="font-family: 'Pridi',serif;text-align: left;"> Religion </h3></td>
+                            <td><h3 style="font-family: 'Pridi',serif;text-align: center;"> <%= score.religion.secondSem %> </h3></td>
+                            <td><input type="number" name="religion_secondSem" class="form-control input" required></td>
+                        </tr>
+                        <tr>
+                            <td><h3 style="font-family: 'Pridi',serif;text-align: left;"> General Knowledge </h3></td>
+                            <td><h3 style="font-family: 'Pridi',serif;text-align: center;"> <%= score.general_knowledge.secondSem %> </h3></td>
+                            <td><input type="number" name="general_knowledge_secondSem" class="form-control input" required></td>
+                        </tr>
+                        <tr>
+                            <td><h3 style="font-family: 'Pridi',serif;text-align: left;"> Drawing </h3></td>
+                            <td><h3 style="font-family: 'Pridi',serif;text-align: center;"> <%= score.drawing.secondSem %> </h3></td>
+                            <td><input type="number" name="drawing_secondSem" class="form-control input" required></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td ><button type="submit" class="btn btn-lg btn-primary btn-block gradient-color-65">Save Updates</button> </td>
+                        </tr>
+                    </form>
+                </tbody>
+            </table>
+
+
+            <!-- THIRD SEMESTER RESULT EDITING TABLE -->
+            <table class="table table-borderless table-dark table-hover gradient-color mb-0">
+                <thead>
+                    <tr>
+                        <td class="text-center pt-5 mt-5" colspan="7"><h1 class="font-family-pridi">Third Semester Result Edit</h1></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3 class="font-family-pridi">ID: <span style="color: cyan;"><%= student.students_id %></span></h3>
+                        </td>
+                        <td>
+                        <form action="info" method="POST">
+                            <input type="hidden" name="id" value="<%= student.students_id%>">
+                            <button type="submit" class="btn btn-sm btn-info gradient-color-65"> View Details</button>
+                        </form>
+                        </td>
+                        <td>
+                            <form action="result" method="POST">
+                                <input type="hidden" name="id" value="<%= student.students_id%>">
+                                <button type="submit" class="btn btn-sm btn-info gradient-color-65"><span style="font-family: 'Pridi',serif;"> View Result </span></button>
+                            </form>
+                        </td>
+                        <td>
+                            <h3 style="font-family: 'Pridi', serif;">Class: <span style="color: cyan;"><%= student.Class %></h3>
+                        </td>
+                        <td>
+                            <h3 class="font-family-pridi"></span></h3>
+                        </td>
+                        <td>
+                            <h3 style="font-family: 'Pridi', serif;">Section: <span style="color: cyan;"><%= student.section %></span></h3>
+                        </td>
+                        <td></td>
+                        <td><h3 style="font-family: 'Pridi', serif;">Session: <span style="color: cyan;"><%= student.session %></span></h3></td>
+                    </tr>
+                    <tr>
+                        <td><h3 style="font-family: 'Pridi',serif;text-align: left;"> Subject </h3></td>
+                        <td><h3 style="font-family: 'Pridi', serif;text-align: center;" class="text-center"> 2<sup>nd</sup> Semester</h3></td>
+                        <td><h3 style="font-family: 'Pridi', serif;text-align: center;" class="text-center"> Edit Marks </h3>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <form action="nurseryThirdSemEdit" method="POST">
+                        <tr>
+                            <td><h3 style="font-family: 'Pridi',serif;text-align: left;"> Bangla </h3></td>
+                            <td><h3 style="font-family: 'Pridi',serif;text-align: center;"> <%= score.bangla.thirdSem %> </h3></td>
+                            <input type="hidden" name="id" value="<%= score.students_id %>">
+
+                            <td><input type="number" name="bangla_thirdSem" class="form-control input" required></td>
+                        </tr>
+                        <tr>
+                            <td><h3 style="font-family: 'Pridi',serif;text-align: left;"> English </h3></td>
+                            <td><h3 style="font-family: 'Pridi',serif;text-align: center;"> <%= score.english.thirdSem %> </h3></td>
+                            <td><input type="number" name="english_thirdSem" class="form-control input" required></td>
+                        </tr>
+                        <tr>
+                            <td><h3 style="font-family: 'Pridi',serif;text-align: left;"> Math </h3></td>
+                            <td><h3 style="font-family: 'Pridi',serif;text-align: center;"> <%= score.math.thirdSem %> </h3></td>
+                            <td><input type="number" name="math_thirdSem" class="form-control input" required></td>
+                        </tr>
+                        <tr>
+                            <td><h3 style="font-family: 'Pridi',serif;text-align: left;"> Religion </h3></td>
+                            <td><h3 style="font-family: 'Pridi',serif;text-align: center;"> <%= score.religion.thirdSem %> </h3></td>
+                            <td><input type="number" name="religion_thirdSem" class="form-control input" required></td>
+                        </tr>
+                        <tr>
+                            <td><h3 style="font-family: 'Pridi',serif;text-align: left;"> General Knowledge </h3></td>
+                            <td><h3 style="font-family: 'Pridi',serif;text-align: center;"> <%= score.general_knowledge.thirdSem %> </h3></td>
+                            <td><input type="number" name="general_knowledge_thirdSem" class="form-control input" required></td>
+                        </tr>
+                        <tr>
+                            <td><h3 style="font-family: 'Pridi',serif;text-align: left;"> Drawing </h3></td>
+                            <td><h3 style="font-family: 'Pridi',serif;text-align: center;"> <%= score.drawing.thirdSem %> </h3></td>
+                            <td><input type="number" name="drawing_thirdSem" class="form-control input" required></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td ><button type="submit" class="btn btn-lg btn-primary btn-block gradient-color-65">Save Updates</button> </td>
+                        </tr>
+                    </form>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include("./partials/footer") -%>
