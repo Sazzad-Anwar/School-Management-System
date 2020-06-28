@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 const method_override = require("method-override");
 const studentDB = require("../model/students");
+const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const nurserySub = require("../model/nurserySubject");
 const multer = require('multer');
@@ -124,7 +125,7 @@ router.post("/registration", ensureAuthenticated, upload.single('photo'), (req, 
         } else {
             if(mimetype == "jpg" || mimetype == "png" || mimetype == 'JPG' || mimetype == 'JPEG' || mimetype =='PNG' && password == password1){
                 var salt = bcrypt.genSaltSync(10);
-                var hash = bcrypt.hashSync(password, salt);
+                var password = bcrypt.hashSync(password1, salt);
                 const newStudent = new studentDB({
                     students_name,
                     students_id,
