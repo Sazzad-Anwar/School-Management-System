@@ -5,43 +5,52 @@
 <div class="student_details pb-0">
     <div class="container-fluid">
         <%- include("./partials/flash_message") -%>
-        <form action="registration" method="POST">
+        <form action="/student/registration" method="POST" enctype="multipart/form-data">
             <div class="row">
                 <table class="table table-hover gradient-color table-borderless table-dark mb-0">
                     <thead>
                         <td>
-                            <h1 style="font-family: 'Pridi',serif;" class="text-center ml-5 pl-5">Student Registration</h1>
+                            <h1 style="font-family: 'Pridi',serif;" class="text-right ml-5 mr-5 pl-5">Student Registration</h1>
                         </td>
                         <td>
-                            <h2 class="text-left pt-2" style="font-family:'Pridi', serif;">Total Registered Students : <span style="font-family:'Pridi', serif;color: cyan" > <%= count %></span></h2>
-                        </td>
-                        <td>
-                            
+                            <h2 class="text-left pt-2" style="font-family:'Pridi', serif;">Total Registered Students : <span style="font-family:'Pridi', serif;color: black" > <%= count %></span></h2>
                         </td>
                     </thead>
                     <tbody class="ml-5 pl-5">
                         <tr>
-                            <td>
+                            <td class="margin250">
                                 <h4 class="pl-5">Name :</h4>
                             </td>
-                            <td>
-                                <input type="text" name="students_name" class=" input" required>
+                            <td style="padding-right: 35vw;">
+                                <input type="text" name="students_name" class=" form-control input" required>
                             </td>
+                            
                         </tr>
                         <tr>
-                            <td>
+                            <td class="margin250">
                                 <h4 class="pl-5">ID :</h4>
                             </td>
-                            <td>
-                                <input type="text" name="students_id" class="input" style="background-color: transparent;"value="<%= ID %>" readonly>
+                            <td style="padding-right: 35vw;">
+                                <input type="text" name="students_id" class="input form-control" style="background-color: transparent;"value="<%= ID %>" readonly>
                             </td>
+                        
                         </tr>
                         <tr>
-                            <td>
+                            <td class="margin250">
+                                <h4 class="pl-5">Student's Photo</h4>
+                            </td>
+                            <td style="padding-right: 35vw;"><div class="custom-file">
+                                <input type="file" class="custom-file-input form-control" name="photo" id="customFile">
+                                <label class="custom-file-label" for="customFile">Choose file</label>
+                              </div></td>
+                              
+                        </tr>
+                        <tr>
+                            <td class="margin250">
                                 <h4 class="pl-5">Class :</h4>
                             </td>
-                            <td>
-                                <select class=" input select" name="Class" required>
+                            <td style="padding-right: 35vw;">
+                                <select class=" input select form-control" name="Class" required>
                                     <option value="Play" class="option">Play</option>
                                     <option value="Nursery" class="option">Nursery</option>
                                     <option value="1" class="option">1</option>
@@ -60,88 +69,114 @@
                                     </option>
                                 </select>
                             </td>
+                            
                         </tr>
                         <tr>
-                            <td>
+                            <td class="margin250">
                                 <h4 class="pl-5">Section :</h4>
                             </td>
-                            <td>
-                                <select name="section" class="input select" required>
+                            <td style="padding-right: 35vw;">
+                                <select name="section" class="input form-control select" required>
                                     <option value="N/A" class="option">N/A</option>
                                     <option value="A" class="option">A</option>
                                     <option value="B" class="option">B</option>
                                     <option value="C" class="option">C</option>
                                 </select>
                             </td>
+                            
                         </tr>
                         <tr>
-                            <td>
+                            <td class="margin250">
                                 <h4 class="pl-5">Admission Date :</h4>
                             </td>
-                            <td>
-                                <input type="date" name="admission_date" class=" input" required>
+                            <td style="padding-right: 35vw;">
+                                <input type="date" name="admission_date" class="form-control input" required>
                             </td>
+                            
                         </tr>
                         <tr>
-                            <td>
+                            <td class="margin250">
                                 <h4 class="pl-5">Session :</h4>
                             </td>
-                            <td>
-                                <input type="text" name="session" class="input" style="background-color: transparent;"value="<%= session %>" readonly>
+                            <td style="padding-right: 35vw;">
+                                <input type="text" name="session" class="form-control input" style="background-color: transparent;"value="<%= session %>" readonly>
                             </td>
+                            
                         </tr>
                         <tr>
-                            <td>
+                            <td class="margin250">
                                 <h4 class="pl-5">Father's Name :</h4>
                             </td>
-                            <td>
-                                <input type="text" name="father_name" class=" input" required>
+                            <td style="padding-right: 35vw;">
+                                <input type="text" name="father_name" class="form-control input" required>
                             </td>
+                            
                         </tr>
                         <tr>
-                            <td>
+                            <td class="margin250">
                                 <h4 class="pl-5">Mother's Name :</h4>
                             </td>
-                            <td>
-                                <input type="text" name="mother_name" class=" input" required>
+                            <td style="padding-right: 35vw;">
+                                <input type="text" name="mother_name" class="form-control input" required>
                             </td>
+                            
                         </tr>
                         <tr>
-                            <td>
+                            <td class="margin250">
                                 <h4 class="pl-5">Date of Birth :</h4>
                             </td>
-                            <td>
-                                <input type="date" class=" input" name="dateOfBirth" required>
+                            <td style="padding-right: 35vw;">
+                                <input type="date" class="form-control input" name="dateOfBirth" required>
                             </td>
+                            
                         </tr>
                         <tr>
-                            <td>
+                            <td class="margin250">
                                 <h4 class="pl-5">Contact Number :</h4>
                             </td>
 
-                            <td>
+                            <td style="padding-right: 35vw;">
 
-                                <input type="tel" class=" input" name="contact_number" required>
+                                <input type="tel" class="form-control input" name="contact_number" required>
                             </td>
+                            
                         </tr>
                         <tr>
-                            <td>
+                            <td class="margin250">
                                 <h4 class="pl-5">Contact Relation :</h4>
                             </td>
-                            <td>
-
-                                <select class="input  select" name="contact_rel" required>
+                            <td style="padding-right: 35vw;">
+                                <select class="input form-control select" name="contact_rel" required>
                                     <option value="Mother" class="option">Mother</option>
                                     <option value="Father" class="option">Father</option>
                                     <option value="Ownself" class="option">Ownself</option>
                                     <option value="Other" class="option">Other</option>
                                 </select>
                             </td>
+                            
+                        </tr>
+                        <tr>
+                            <td class="margin250">
+                                <h4 class="pl-5">Password</h4>
+                            </td>
+                            <td style="padding-right: 35vw;">
+                                <input type="password" name="password" class="form-control input">
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td class="margin250">
+                                <h4 class="pl-5">Confirm Password</h4>
+                            </td>
+                            <td style="padding-right: 35vw;">
+                                <input type="password" name="password1" class="form-control input">
+                            </td>
+                            
                         </tr>
                         <tr>
                             <td></td>
-                            <td>
-                                <button type="submit" class="btn btn-secondary btn-lg gradient-color-65"> Register </button>
+                            <td style="padding-right: 35vw;">
+                                <button type="submit" class="btn btn-secondary btn-block btn-lg gradient-color-65"> Register </button>
                             </td>
                         </tr>
                     </tbody>

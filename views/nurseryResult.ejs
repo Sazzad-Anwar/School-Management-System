@@ -1,4 +1,8 @@
-<%- include("./partials/header") -%>
+<% if(student.role == 'student'){ %>
+    <%- include("./partials/studentHeader") -%>
+<% }else{ %> 
+    <%- include("./partials/header") -%>
+<% } %> 
 <title>Result</title>
 
 <div class="student_details pb-0">
@@ -9,25 +13,29 @@
                     <thead>
                         <tr>
                             <td>
-                                <h3 class="font-family-pridi text-center">ID: <span style="color: cyan;"><%= student.students_id %></span></h3>
+                                <h3 class="font-family-pridi text-center">ID: <span style="color: black;"><%= student.students_id %></span></h3>
                             </td>
                             <td>
-                            <form action="info" method="POST">
-                                <input type="hidden" name="id" value="<%= student.students_id%>">
-                                <button type="submit" class="btn btn-sm btn-info gradient-color-65"> View Details</button>
-                            </form>
+                            <% if(student.role == 'student'){ %>
+                                
+                            <% }else{ %> 
+                                <form action="info" method="POST">
+                                    <input type="hidden" name="id" value="<%= student.students_id%>">
+                                    <button type="submit" class="btn btn-sm btn-info gradient-color-65"> View Details</button>
+                                </form>
+                            <% } %> 
                             </td>
                             <td>
                                 <h3 class="font-family-pridi text-center">Class: </h3>
                             </td>
                             <td>
-                                <h3 class="font-family-pridi text-center"><span style="color: cyan;"><%= student.Class %></span></h3>
+                                <h3 class="font-family-pridi text-center"><span style="color: black;"><%= student.Class %></span></h3>
                             </td>
                             <td>
-                                <h3 class="font-family-pridi text-center">Section: <span style="color: cyan;"><%= student.section %></span></h3>
+                                <h3 class="font-family-pridi text-center">Section: <span style="color: black;"><%= student.section %></span></h3>
                             </td>
                             <td></td>
-                            <td><h3 class="font-family-pridi text-center">Session: <span style="color: cyan;"><%= student.session %></span></h3></td>
+                            <td><h3 class="font-family-pridi text-center">Session: <span style="color: black;"><%= student.session %></span></h3></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -274,26 +282,26 @@
                             <!-- AVERAGE MARKS -->
                             <tr>
                                 <td><h4 class="font-family-pridi">Average Marks </h4></td>
-                                <td><h4 class="font-family-pridi text-center" style=" color: cyan;" ><%= average %> </h4></td>
+                                <td><h4 class="font-family-pridi text-center" style=" color: black;" ><%= average %> </h4></td>
                                 <td>
-                                    <h4 class="font-family-pridi text-center" style="color: cyan;" ><%= firstSemGrade %></h4>
+                                    <h4 class="font-family-pridi text-center" style="color: black;" ><%= firstSemGrade %></h4>
                                 </td>
                                 <td>
-                                    <h4 class="font-family-pridi text-center" style="color: cyan;" ><%= firstSemTotalGrade %></h4>
+                                    <h4 class="font-family-pridi text-center" style="color: black;" ><%= firstSemTotalGrade %></h4>
                                 </td>
-                                <td><h4 class="font-family-pridi text-center" style=" color: cyan;" ><%= secondSemAverage %> </h4></td>
+                                <td><h4 class="font-family-pridi text-center" style=" color: black;" ><%= secondSemAverage %> </h4></td>
                                 <td>
-                                    <h4 class="font-family-pridi text-center" style="color: cyan;" ><%= secondSemGrade %></h4>
-                                </td>
-                                <td>
-                                    <h4 class="font-family-pridi text-center" style="color: cyan;" ><%= secondSemTotalGrade %></h4>
-                                </td>
-                                <td><h4 class="font-family-pridi text-center" style=" color: cyan;" ><%= thirdSemAverage %> </h4></td>
-                                <td>
-                                    <h4 class="font-family-pridi text-center" style="color: cyan;" ><%= thirdSemGrade %></h4>
+                                    <h4 class="font-family-pridi text-center" style="color: black;" ><%= secondSemGrade %></h4>
                                 </td>
                                 <td>
-                                    <h4 class="font-family-pridi text-center" style="color: cyan;" ><%= thirdSemTotalGrade %></h4>
+                                    <h4 class="font-family-pridi text-center" style="color: black;" ><%= secondSemTotalGrade %></h4>
+                                </td>
+                                <td><h4 class="font-family-pridi text-center" style=" color: black;" ><%= thirdSemAverage %> </h4></td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" style="color: black;" ><%= thirdSemGrade %></h4>
+                                </td>
+                                <td>
+                                    <h4 class="font-family-pridi text-center" style="color: black;" ><%= thirdSemTotalGrade %></h4>
                                 </td>
                             </tr>
 
@@ -303,25 +311,25 @@
                                     <h4 class="font-family-pridi">Total Marks</h4>
                                 </td>
                                 <td>
-                                    <h4 class="font-family-pridi text-center" style="color: cyan;" ><%= totalFirstSem %></h4>
+                                    <h4 class="font-family-pridi text-center" style="color: black;" ><%= totalFirstSem %></h4>
                                 </td>
                                 <td></td>
                                 <td></td>
-                                <td><h4 class="font-family-pridi text-center" style=" color: cyan;" ><%= totalSecondSem %> </h4></td>
+                                <td><h4 class="font-family-pridi text-center" style=" color: black;" ><%= totalSecondSem %> </h4></td>
                                 <td></td>
                                 <td></td>
-                                <td><h4 class="font-family-pridi text-center" style=" color: cyan;" ><%= totalThirdSem %> </h4></td>
+                                <td><h4 class="font-family-pridi text-center" style=" color: black;" ><%= totalThirdSem %> </h4></td>
                                 <td></td>
                                 <td></td>
                             </tr>
                             <% if(totalFirstSem && totalSecondSem && totalThirdSem){ %>
                                 <tr>
                                     <td class="alert alert-danger" role="alert"><h5 class="font-family-pridi">Total Annual Marks </h5></td>
-                                    <td><h4 class="font-family-pridi text-center" style=" color: cyan;" ><%= totalAverageMarks %></h4></td>
+                                    <td><h4 class="font-family-pridi text-center" style=" color: black;" ><%= totalAverageMarks %></h4></td>
                                     <td class="alert alert-danger" role="alert"><h4 class="font-family-pridi text-center"> Grade </h4></td>
-                                    <td><h4 class="font-family-pridi text-center" style=" color: cyan;" ><%= overAllGrade %></h4></td>
+                                    <td><h4 class="font-family-pridi text-center" style=" color: black;" ><%= overAllGrade %></h4></td>
                                     <td class="alert alert-danger" role="alert"><h4 class="font-family-pridi text-center" >GPA </h4></td>
-                                    <td ><h4 class="font-family-pridi text-center" style=" color: cyan;" ><%= overAllTotalGrade %></h4></td>
+                                    <td ><h4 class="font-family-pridi text-center" style=" color: black;" ><%= overAllTotalGrade %></h4></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
@@ -340,10 +348,14 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <form action="nurseryResultEdit" method="POST">
-                                    <input type="hidden" name="id" value="<%=student.students_id%>">
-                                <td colspan="2"><button type="submit" class="btn btn-success btn-block btn-lg gradient-color-65"> Update Results </button></td>
-                                </form>
+                                <% if(student.role == 'student'){ %>
+                            
+                                <% }else{ %> 
+                                    <form action="nurseryResultEdit" method="POST">
+                                        <input type="hidden" name="id" value="<%=student.students_id%>">
+                                    <td colspan="2"><button type="submit" class="btn btn-success btn-block btn-lg gradient-color-65"> Update Results </button></td>
+                                    </form>
+                                <% } %> 
                             </tr>
                     </tbody>
                 </table>

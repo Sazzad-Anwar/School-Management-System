@@ -47,6 +47,18 @@ const Studentschema = new mongoose.Schema({
     session:{
         type:String,
         required: true
+    },
+    image:{
+        type:String,
+        required:true
+    },
+    password:{
+        type:String,
+        required: true
+    },
+    role:{
+        type: String,
+        default: 'student',
     }
 });
 

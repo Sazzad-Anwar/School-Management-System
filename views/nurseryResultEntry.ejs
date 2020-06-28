@@ -13,13 +13,13 @@
                                 <h3 style="font-family: 'Pridi', serif">Score Sheet</h3>
                             </td>
                             <td>
-                                <h3 style="font-family: 'Pridi', serif;">Student ID: <span style="color: cyan;"><%= student.students_id %></span></h3>
+                                <h3 style="font-family: 'Pridi', serif;">Student ID: <span style="color: black;"><%= student.students_id %></span></h3>
                             </td>
                             <td>
-                                <h3 style="font-family: 'Pridi', serif;">Class: <span style="color: cyan;"><%= student.Class %></span></h3>
+                                <h3 style="font-family: 'Pridi', serif;">Class: <span style="color: black;"><%= student.Class %></span></h3>
                             </td>
                             <td>
-                                <h3 style="font-family: 'Pridi', serif;">Section: <span style="color: cyan;"><%= student.section %></span></h3>
+                                <h3 style="font-family: 'Pridi', serif;">Section: <span style="color: black;"><%= student.section %></span></h3>
                             </td>
                         </tr>
                         <tr>
@@ -131,14 +131,14 @@
                         <tr>
                             <td></td>
                             <td><h2 class="text-right">Year :</h2></td>
-                            <td><h2 class="text-left" style="font-family: 'Pridi',serif;color: cyan;"><%= student.session %></h2></td>
+                            <td><h2 class="text-left" style="font-family: 'Pridi',serif;color: black;"><%= student.session %></h2></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td><input type="text" name="students_id" value="<%= student.students_id %>" hidden></td>
                             <td></td>
                             <td></td>
-                            <td><button type="submit" class="btn btn-success btn-block btn-lg"> Save </button></td>
+                            <td><button type="submit" class="btn btn-success btn-sm"> Save </button></td>
                         </tr>
                     </tbody>
                 </table>

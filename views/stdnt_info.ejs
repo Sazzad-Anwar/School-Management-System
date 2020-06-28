@@ -1,4 +1,4 @@
-<%- include("./partials/header") -%>
+<%- include("./partials/studentHeader") -%>
 
 <title>Student's Information</title>
 
@@ -76,10 +76,7 @@
             </td>
             <td>
               <% if(!score){ %>
-                <form action="resultEntry" method="POST">
-                  <input type="text" name="id" value="<%= student.students_id %>" hidden>
-                  <button type="submit" class="btn btn-primary btn-default btn-sm"> Insert Scores </button>
-                </form>
+                    <button type="button" class="btn btn-primary btn-default btn-sm"> No Exams Score Found </button>
               <% }else{ %>
                 <form action="result" method="POST">
                   <input type="text" name="id" value="<%= student.students_id %>" hidden>
@@ -87,13 +84,6 @@
                   <button type="submit" class="btn btn-primary btn-default btn-sm"> Check Results </button>
                 </form>
               <% } %>
-            </td>
-            <td style="position: absolute;right: 13vw;">
-              <form action="delete?_method=DELETE" method="post">
-                <input type="hidden" name="id" value="<%= student._id%>">
-                <input type="hidden" name="students_id" value='<%= student.students_id%>'>
-                <button type="submit" class="btn btn-danger btn-default btn-block">Detete</button>
-              </form>
             </td>
           </tr>
           <% } %>

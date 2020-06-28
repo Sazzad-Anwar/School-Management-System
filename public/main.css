@@ -2,6 +2,35 @@
     filter: blur(9px) !important;
 }
 
+h1,h2,h3,h4,h5,p,label{
+    color: black;
+    font-family:'Pridi', serif;
+}
+
+a:hover{
+    text-decoration: none !important;
+    color: #5B2C6F !important;
+}
+
+.nav-item > a{
+    font-size: 23px;
+    padding: 6px 18px !important;
+}
+
+.nav-item > a:hover{
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 4px 4px black;
+}
+
+
+label{
+    font-size: 20px !important;
+}
+input{
+    border-color: black !important;
+    color: black !important;
+}
 /*----------------------- form ------------------------*/
 
 .form{
@@ -17,7 +46,7 @@
     font-weight: 900;
 }
 ::placeholder{
-    color: white !important;
+    color: black !important;
     font-size: 20px;
     font-weight: 700;
     background-color: transparent !important;
@@ -33,7 +62,7 @@
     border-left: none;
     border-right: none;
     border-bottom: 2px solid black;
-    color: white !important;
+    color: black !important;
     font-weight: bold;
     font-size: 20px;
 }
@@ -50,7 +79,7 @@ input:focus{
 input:focus::placeholder{
     padding-left: 100% !important;
     transition: 1s ease-in-out;
-    color: white !important;
+    color: black !important;
     font-size: 20px;
     font-weight: 700;
     text-shadow: 2px 1px;
@@ -65,9 +94,10 @@ input:focus::placeholder{
 
 .select{
     background-color: transparent !important;
+    border-bottom: 1px solid black !important;
 }
 .option{
-    background-color: #134E5E !important;
+    background-color: #fff !important;
 }
 
 .a, .p{
@@ -84,30 +114,39 @@ input:focus::placeholder{
     margin-right: 33%;
 }
 
+.margin250{
+    padding-left: 330px !important;
+    padding-right: 10vw !important;
+}
+
 /*---------------------- navbar ---------------------------*/
 .navbar-brand{
     font-family: 'Sigmar One', cursive;
-    color:#71B280 !important;
+    color:#ffff !important;
     font-size: xx-large;
-    margin-left: 300px !important;
 }
-.navbar{
-    color: white;
+
+.navbar-brand:hover{
+    color: #fff !important;
+}
+.navbar, .color-black{
+    color: black !important;
 }
 
 .gradient-color-65{
-    background: linear-gradient( 45deg, #134E5E 55% ,#71B280 35% ) !important;
+    /* background: linear-gradient(to right,#EC7063,#F1948A ,#FADBD8 ) !important; */
+    background: #5B2C6F   !important;
 }
 
 .gradient-color{
-    background: linear-gradient( #134E5E ,#71B280 ) !important;
+    background: #ffffff !important;
 }
 .navbar-nav{
     margin-left: auto;
     font-family: 'Alfa Slab One', cursive;
 }
 .nav-link{
-    color: #134E5E !important;
+    color: #ffff !important;
     font-size: xx-large;
 }
 .nav-link:hover{
@@ -122,7 +161,7 @@ input:focus::placeholder{
 
 /*--------------------- student registration page ------------*/
 .card{
-    background-color: #343A40;
+    background-color: #fff;
     border-radius: 10px;
     box-shadow: 8px 8px #c9c1c1;
     font-family: 'Alfa Slab One', cursive;
@@ -130,8 +169,8 @@ input:focus::placeholder{
 .card:hover{
     box-shadow: 19px 20px grey;
     transition: .3s ease-in;
-    background-color: #343A40;
-    color: white;
+    background-color: #fff;
+    color: black;
 }
 .card1, .card4{
     left: -100%;
@@ -162,7 +201,7 @@ input:focus::placeholder{
     transition: .8s ease-in;
 }
 .active{
-    color: white !important;
+    color: black !important;
 }
 
 /*-------------------------- student registration page ----------------*/
@@ -172,6 +211,10 @@ input:focus::placeholder{
 }
 .registration_heading{
     margin-left: 10%;
+}
+
+option{
+    color: black !important;
 }
 
 /*-------------------------- student details page --------------------*/
@@ -189,4 +232,8 @@ input:focus::placeholder{
 .teacher_details{
     padding-bottom: 65px;
     background-color: #b4abab;
+}
+
+.datepicker-modal{
+    height: 355px !important;
 }

@@ -1,8 +1,4 @@
-<% if(student.role == 'student'){ %>
-    <%- include("./partials/studentHeader") -%>
-<% }else{ %> 
-    <%- include("./partials/header") -%>
-<% } %> 
+<%- include("./partials/studentHeader") -%>
 
 <title>Student's Information</title>
 
@@ -46,34 +42,30 @@
                         <td>
                             <h4><%= student.Class %></h4>
                         </td>
-                        <% if(student.role == 'student'){ %>
-                            
-                        <% }else{ %> 
-                            <form action="Class" method="post">
-                                <td>
-                                    <input type="hidden" name="id" value="<%= student._id %>">
-                                    <select class="form-control input select" name="Class">
-                                        <option value="Play" class="option">Play</option>
-                                        <option value="Nursery" class="option">Nursery</option>
-                                        <option value="1" class="option">1</option>
-                                        <option value="2" class="option">2</option>
-                                        <option value="3" class="option">3</option>
-                                        <option value="4" class="option">4</option>
-                                        <option value="5" class="option">5</option>
-                                        <option value="6" class="option">6</option>
-                                        <option value="7" class="option">7</option>
-                                        <option value="8" class="option">8</option>
-                                        <option value="9" class="option">9</option>
-                                        <option value="10" class="option">10</option>
-                                        <option value="Intermediate first year" class="option">Intermediate First Year
-                                        </option>
-                                        <option value="Intermediate second year" class="option">Intermediate Second Year
-                                        </option>
-                                    </select>
-                                </td>
-                                <td><button type="submit" class="btn btn-success  btn-block">Save</button></td>
-                            </form>
-                        <% } %> 
+                        <form action="Class" method="post">
+                            <td>
+                                <input type="hidden" name="id" value="<%= student._id %>">
+                                <select class="form-control input select" name="Class">
+                                    <option value="Play" class="option">Play</option>
+                                    <option value="Nursery" class="option">Nursery</option>
+                                    <option value="1" class="option">1</option>
+                                    <option value="2" class="option">2</option>
+                                    <option value="3" class="option">3</option>
+                                    <option value="4" class="option">4</option>
+                                    <option value="5" class="option">5</option>
+                                    <option value="6" class="option">6</option>
+                                    <option value="7" class="option">7</option>
+                                    <option value="8" class="option">8</option>
+                                    <option value="9" class="option">9</option>
+                                    <option value="10" class="option">10</option>
+                                    <option value="Intermediate first year" class="option">Intermediate First Year
+                                    </option>
+                                    <option value="Intermediate second year" class="option">Intermediate Second Year
+                                    </option>
+                                </select>
+                            </td>
+                            <td><button type="submit" class="btn btn-success  btn-block">Save</button></td>
+                        </form>
                     </tr>
                     <tr>
                         <td>
@@ -82,9 +74,6 @@
                         <td>
                             <h4><%= student.section %></h4>
                         </td>
-                        <% if(student.role == 'student'){ %>
-                            
-                        <% }else{ %>
                         <form action="section" method="POST">
                             <td>
                                 <input type="hidden" name="id" value="<%= student._id %>">
@@ -99,7 +88,6 @@
                                 <button type="submit" class="btn btn-success  btn-block"> Save </button>
                             </td>
                         </form>
-                        <% } %> 
                     </tr>
                     <tr>
                         <td>
@@ -108,9 +96,6 @@
                         <td>
                             <h4><%= student.admission_date %></h4>
                         </td>
-                        <% if(student.role == 'student'){ %>
-                            
-                        <% }else{ %>
                         <form action="admission_date" method="POST">
                             <td>
                                 <input type="hidden" name="id" value="<%= student._id %>">
@@ -121,7 +106,6 @@
                                 <button type="submit" class="btn btn-success  btn-block"> Save </button>
                             </td>
                         </form>
-                        <% } %> 
                     </tr>
                     <tr>
                         <td>
