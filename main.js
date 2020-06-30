@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const passport = require("passport");
 const session = require("express-session");
 var conn = require("./configuration/database");
+const studentDB = require('./model/students');
 const morgan = require("morgan");
 const {ensureAuthenticated, forwardAuthenticated} = require('./configuration/auth');
 
@@ -16,6 +17,27 @@ app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
 app.set("view engine", "ejs");
 const PORT =  5000;
+
+studentDB.find({},(err,found)=>{
+  if(found.length == 0){
+    var admin = new studentDB({
+      students_name:'.',
+      students_id:'2020',
+      Class:'.',
+      section:'.',
+      father_name:'.',
+      mother_name:'.',
+      dateOfBirth:'.',
+      contact_number:'.',
+      contact_rel:'.',
+      admission_date:'.',
+      session:'.',image:'.',password:'$2a$10$JDBfgoek//DNTLKN.kY9w.CleA73cVtPsm1WweTCLqmTjoLLH4tRu',
+      role:'admin'
+    });
+    admin.save();
+  }
+});
+
 
 app.use(
   session({
