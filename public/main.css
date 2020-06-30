@@ -119,6 +119,10 @@ input:focus::placeholder{
     padding-right: 10vw !important;
 }
 
+.class > tbody > tr > td{
+    padding: 0px;
+}
+
 /*---------------------- navbar ---------------------------*/
 .navbar-brand{
     font-family: 'Sigmar One', cursive;
@@ -234,6 +238,3 @@ option{
     background-color: #b4abab;
 }
 
-.datepicker-modal{
-    height: 355px !important;
-}

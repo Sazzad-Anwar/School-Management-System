@@ -28,11 +28,11 @@
         <tbody>
           <% Class.forEach(function(Class){ %>
             <tr>
-              <td><h5><%= Class.students_id %></h5></td>
-              <td><h5><%= Class.students_name %></h5></td>
-              <td><h5><%= Class.dateOfBirth %></h5></td>
-              <td><h5><%= Class.admission_date %></h5></td>
-              <td><h5><%= Class.contact_number %></h5></td>
+              <td><p><%= Class.students_id %></p></td>
+              <td><p><%= Class.students_name %></p></td>
+              <td><p><%= Class.dateOfBirth %></p></td>
+              <td><p><%= Class.admission_date %></p></td>
+              <td><p><%= Class.contact_number %></p></td>
               <td>
                 <form action="info" method="POST">
                   <input type="hidden" name="id" value="<%= Class.students_id %>">

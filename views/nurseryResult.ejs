@@ -1,10 +1,9 @@
-<% if(student.role == 'student'){ %>
+<% if(studentRole == 'student'){ %>
     <%- include("./partials/studentHeader") -%>
 <% }else{ %> 
     <%- include("./partials/header") -%>
 <% } %> 
 <title>Result</title>
-
 <div class="student_details pb-0">
     <div class="container-fluid">
         <%- include("./partials/flash_message") -%>
@@ -348,7 +347,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <% if(student.role == 'student'){ %>
+                                <% if(studentRole == 'student'){ %>
                             
                                 <% }else{ %> 
                                     <form action="nurseryResultEdit" method="POST">

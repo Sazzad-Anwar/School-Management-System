@@ -137,7 +137,7 @@ router.post("/registration", ensureAuthenticated, upload.single('photo'), (req, 
                     contact_number,
                     contact_rel,
                     admission_date,
-                    session,image,hash
+                    session,image,password
                 });
                 newStudent.save().then(student => {
                     nurserySub.findOne({students_id:students_id},(err,score)=>{
@@ -1281,7 +1281,7 @@ router.post("/nursery",ensureAuthenticated,(req,res)=>{
                 score.save();
                 req.flash("success_msg","Result entry is done");
                 
-                res.render("nurseryResult",{totalFirstSem,totalSecondSem,totalThirdSem,average,secondSemAverage,thirdSemAverage,score,student,b1stgpa,b2ndgpa,b3rdgpa,e1stgpa,e2ndgpa,e3rdgpa,m1stgpa,m2ndgpa,m3rdgpa,r1stgpa,r2ndgpa,r3rdgpa,g1stgpa,g2ndgpa,g3rdgpa,d1stgpa,d2ndgpa,d3rdgpa,b1stgradePoint,b2ndgradePoint,b3rdgradePoint,e1stgradePoint,e2ndgradePoint,e3rdgradePoint,m1stgradePoint,m2ndgradePoint,m3rdgradePoint,r1stgradePoint,r2ndgradePoint,r3rdgradePoint,g1stgradePoint,g2ndgradePoint,g3rdgradePoint,d1stgradePoint,d2ndgradePoint,d3rdgradePoint,firstSemTotalGrade,secondSemTotalGrade,thirdSemTotalGrade,firstSemGrade,secondSemGrade,thirdSemGrade,overAllTotalGrade,overAllGrade,totalAverageMarks});
+                res.render("nurseryResult",{totalFirstSem,totalSecondSem,totalThirdSem,average,secondSemAverage,thirdSemAverage,score,student,b1stgpa,b2ndgpa,b3rdgpa,e1stgpa,e2ndgpa,e3rdgpa,m1stgpa,m2ndgpa,m3rdgpa,r1stgpa,r2ndgpa,r3rdgpa,g1stgpa,g2ndgpa,g3rdgpa,d1stgpa,d2ndgpa,d3rdgpa,b1stgradePoint,b2ndgradePoint,b3rdgradePoint,e1stgradePoint,e2ndgradePoint,e3rdgradePoint,m1stgradePoint,m2ndgradePoint,m3rdgradePoint,r1stgradePoint,r2ndgradePoint,r3rdgradePoint,g1stgradePoint,g2ndgradePoint,g3rdgradePoint,d1stgradePoint,d2ndgradePoint,d3rdgradePoint,firstSemTotalGrade,secondSemTotalGrade,thirdSemTotalGrade,firstSemGrade,secondSemGrade,thirdSemGrade,overAllTotalGrade,overAllGrade,totalAverageMarks,studentRole:student.role});
 
             }
             // if(!student && !score){
@@ -1301,6 +1301,7 @@ router.post("/nursery",ensureAuthenticated,(req,res)=>{
 
 router.post("/result",ensureAuthenticated,(req,res)=>{
     const id = req.body.id;
+    const studentRole = req.user.role;
     studentDB.findOne({students_id:id},(err,student)=>{
         nurserySub.findOne({students_id:id},(err,score)=>{
             if(student){
@@ -1992,8 +1993,8 @@ router.post("/result",ensureAuthenticated,(req,res)=>{
                     if(overAllTotalGrade == 0 ){
                         overAllGrade = "F";
                     }
-                    
-                    res.render("nurseryResult",{totalFirstSem,totalSecondSem,totalThirdSem,average,secondSemAverage,thirdSemAverage,score,student,b1stgpa,b2ndgpa,b3rdgpa,e1stgpa,e2ndgpa,e3rdgpa,m1stgpa,m2ndgpa,m3rdgpa,r1stgpa,r2ndgpa,r3rdgpa,g1stgpa,g2ndgpa,g3rdgpa,d1stgpa,d2ndgpa,d3rdgpa,b1stgradePoint,b2ndgradePoint,b3rdgradePoint,e1stgradePoint,e2ndgradePoint,e3rdgradePoint,m1stgradePoint,m2ndgradePoint,m3rdgradePoint,r1stgradePoint,r2ndgradePoint,r3rdgradePoint,g1stgradePoint,g2ndgradePoint,g3rdgradePoint,d1stgradePoint,d2ndgradePoint,d3rdgradePoint,firstSemTotalGrade,secondSemTotalGrade,thirdSemTotalGrade,firstSemGrade,secondSemGrade,thirdSemGrade,overAllTotalGrade,overAllGrade,totalAverageMarks});
+                    console.log(student.role);
+                    res.render("nurseryResult",{totalFirstSem,totalSecondSem,totalThirdSem,average,secondSemAverage,thirdSemAverage,score,student,b1stgpa,b2ndgpa,b3rdgpa,e1stgpa,e2ndgpa,e3rdgpa,m1stgpa,m2ndgpa,m3rdgpa,r1stgpa,r2ndgpa,r3rdgpa,g1stgpa,g2ndgpa,g3rdgpa,d1stgpa,d2ndgpa,d3rdgpa,b1stgradePoint,b2ndgradePoint,b3rdgradePoint,e1stgradePoint,e2ndgradePoint,e3rdgradePoint,m1stgradePoint,m2ndgradePoint,m3rdgradePoint,r1stgradePoint,r2ndgradePoint,r3rdgradePoint,g1stgradePoint,g2ndgradePoint,g3rdgradePoint,d1stgradePoint,d2ndgradePoint,d3rdgradePoint,firstSemTotalGrade,secondSemTotalGrade,thirdSemTotalGrade,firstSemGrade,secondSemGrade,thirdSemGrade,overAllTotalGrade,overAllGrade,totalAverageMarks,studentRole});
     
                     }
                     if(student && !score){
